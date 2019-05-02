@@ -10,6 +10,10 @@ If you find any issue, please let me know.
 
 ## Release Notes
 
+### 0.0.4
+
+Fixing compatibility problem.
+
 ### 0.0.3
 
 Removing unuseful keyword `hastype` and adding keyword `import`.

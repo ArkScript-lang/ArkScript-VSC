@@ -9,7 +9,7 @@
     "url": "https://github.com/SuperFola/Ark-lang-VSC.git"
   },
   "engines": {
-    "vscode": "1.29.0"
+    "vscode": "^1.29.0"
   },
   "categories": [
     "Programming Languages"

@@ -2,6 +2,10 @@
 
 All notable changes to the "ark" extension will be documented in this file.
 
+## 0.0.4
+## Changed
+- Changed version pattern in `package.json` from `"1.29.0"` to `"^1.29.0"`.
+
 ## 0.0.3
 ### Added
 - CHANGELOG.md
