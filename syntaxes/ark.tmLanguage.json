@@ -1,0 +1,76 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Ark",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ark",
+				"match": "\\b(if|while|begin|fun|let|import|set)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.ark",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ark",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"match": "(nil)(?=(\\s|\\)|\\]|\\}))",
+					"name": "constant.language.nil.ark"
+				},
+				{
+					"match": "(true|false)",
+					"name": "constant.language.boolean.ark"
+				},
+				{
+					"match": "(-?\\d+/\\d+)",
+					"name": "constant.numeric.ratio.ark"
+				},
+				{
+					"match": "(-?\\d+N)",
+					"name": "constant.numeric.bigint.clojure"
+				},
+				{
+					"match": "(-?\\d+)",
+					"name": "constant.numeric.long.clojure"
+				}
+			]
+		},
+		"comments": {
+			"begin": "'",
+			"patterns": [
+				{
+					"name": "comment.line.content.ark",
+					"match": ".*"
+				}
+			],
+			"end": "$",
+			"name": "comment.line.single-quote.ark"
+		}
+	},
+	"scopeName": "source.ark"
+}

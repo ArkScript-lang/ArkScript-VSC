@@ -1,0 +1,39 @@
+{
+  "name": "ark",
+  "displayName": "Ark",
+  "description": "Ark programming language",
+  "version": "0.0.3",
+  "publisher": "SuperFola",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperFola/Ark-lang-VSC.git"
+  },
+  "engines": {
+    "vscode": "1.29.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ark",
+        "aliases": [
+          "Ark",
+          "ark"
+        ],
+        "extensions": [
+          ".ark"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ark",
+        "scopeName": "source.ark",
+        "path": "./syntaxes/ark.tmLanguage.json"
+      }
+    ]
+  }
+}
