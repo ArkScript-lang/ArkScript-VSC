@@ -25,15 +25,15 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.ark",
-				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote)\\b"
+				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) \\b"
 			},
 			{
 				"name": "support.function.ark",
-				"match": "\\b(append|concat|list|print|input|writeFile|readFile|fileExists\\?)\\b"
+				"match": "\\b(append|concat|list|print|input|writeFile|readFile|fileExists\\?) \\b"
 			},
 			{
 				"name": "keyword.operator.ark",
-				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstof|tailof|headof|nil\\?|assert|toNumber|toString|and|or|mod|type|hasfield)\\b"
+				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstof|tailof|headof|nil\\?|assert|toNumber|toString|and|or|mod|type|hasfield) \\b"
 			}]
 		},
 		"strings": {
