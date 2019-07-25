@@ -16,13 +16,24 @@
 		},
 		{
 			"include": "#constants"
+		},
+		{
+			"include": "#captures"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.ark",
-				"match": "\\b(if|while|begin|fun|let|import|set)\\b"
+				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote)\\b"
+			},
+			{
+				"name": "support.function.ark",
+				"match": "\\b(append|concat|list|print|input|writeFile|readFile|fileExists\\?)\\b"
+			},
+			{
+				"name": "keyword.operator.ark",
+				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstof|tailof|headof|nil\\?|assert|toNumber|toString|and|or|mod|type|hasfield)\\b"
 			}]
 		},
 		"strings": {
@@ -52,16 +63,16 @@
 				},
 				{
 					"match": "(-?\\d+N)",
-					"name": "constant.numeric.bigint.clojure"
+					"name": "constant.numeric.bigint.ark"
 				},
 				{
 					"match": "(-?\\d+)",
-					"name": "constant.numeric.long.clojure"
+					"name": "constant.numeric.long.ark"
 				}
 			]
 		},
 		"comments": {
-			"begin": "'",
+			"begin": "#",
 			"patterns": [
 				{
 					"name": "comment.line.content.ark",
@@ -69,7 +80,13 @@
 				}
 			],
 			"end": "$",
-			"name": "comment.line.single-quote.ark"
+			"name": "comment.line.ark"
+		},
+		"captures": {
+			"patterns": [{
+				"name": "variable.parameter.ark",
+				"match": "\\b(&[a-zA-Z_][a-zA-Z0-9_\\-?']*)\\b"
+			}]
 		}
 	},
 	"scopeName": "source.ark"
