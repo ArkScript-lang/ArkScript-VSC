@@ -2,7 +2,7 @@
   "name": "ark",
   "displayName": "Ark",
   "description": "Ark programming language",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "SuperFola",
   "repository": {
     "type": "git",
