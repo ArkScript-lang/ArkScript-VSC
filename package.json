@@ -1,12 +1,12 @@
 {
-  "name": "ark",
-  "displayName": "Ark",
-  "description": "Ark programming language",
+  "name": "arkscript",
+  "displayName": "ArkScript",
+  "description": "ArkScript programming language syntax highlighting extension",
   "version": "0.1.8",
-  "publisher": "SuperFola",
+  "publisher": "ArkScript-lang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SuperFola/Ark-lang-VSC.git"
+    "url": "https://github.com/ArkScript-lang/ArkScript-VSC.git"
   },
   "engines": {
     "vscode": "^1.29.0"
@@ -19,20 +19,21 @@
       {
         "id": "ark",
         "aliases": [
-          "Ark",
-          "ark"
+          "ArkScript",
+          "arkscript"
         ],
         "extensions": [
-          ".ark"
+          ".ark",
+          ".arkscript"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "ark",
+        "language": "arkscript",
         "scopeName": "source.ark",
-        "path": "./syntaxes/ark.tmLanguage.json"
+        "path": "./syntaxes/arkscript.tmLanguage.json"
       }
     ]
   }

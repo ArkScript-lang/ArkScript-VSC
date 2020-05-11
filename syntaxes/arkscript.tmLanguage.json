@@ -1,0 +1,80 @@
+{
+	"scopeName": "source.ark",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ArkScript",
+	"patterns": [{"include": "#expression"}],
+	"repository": {
+		"expression": {
+			"patterns": [{ "include": "#paren-expression" }, { "include": "#captures" }, { "include": "#keywords" }, { "include": "#strings" }, { "include": "#numbers" }, { "include": "#comments" }, { "include": "#constants" }]
+		},
+		"paren-expression": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
+			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
+			"name": "expression.group.ark"
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ark",
+				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+			},
+			{
+				"name": "support.function.ark",
+				"match": "\\b(append|concat|list|print|input|writeFile|readFile|fileExists\\?) "
+			},
+			{
+				"name": "keyword.operator.ark",
+				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstof|tailof|headof|nil\\?|assert|toNumber|toString|and|or|mod|type|hasfield) "
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.ark",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ark",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*",
+					"name": "variable.name.ark"
+				},
+				{
+					"match": "(nil)(?=(\\s|\\)|\\]|\\}))",
+					"name": "constant.language.nil.ark"
+				},
+				{
+					"match": "(true|false)",
+					"name": "constant.language.boolean.ark"
+				},
+				{
+					"match": "((-|\\+)?\\d+(\\.\\d+)?)",
+					"name": "constant.numeric.ark"
+				}
+			]
+		},
+		"comments": {
+			"begin": "#",
+			"patterns": [
+				{
+					"name": "comment.line.content.ark",
+					"match": ".*"
+				}
+			],
+			"end": "$",
+			"name": "comment.line.ark"
+		},
+		"captures": {
+			"patterns": [{
+				"name": "variable.parameter.ark",
+				"match": "&[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*"
+			}]
+		}
+	}
+}
