@@ -7,8 +7,7 @@
 		"expression": {
 			"patterns": [
 				{ "include": "#paren-expression" }, { "include": "#captures" }, { "include": "#keywords" },
-				{ "include": "#strings" }, { "include": "#numbers" }, { "include": "#comments" },
-				{ "include": "#constants" }
+				{ "include": "#strings" }, { "include": "#comments" }, { "include": "#constants" }
 			]
 		},
 		"paren-expression": {
@@ -16,49 +15,61 @@
 			"end": "\\)",
 			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
 			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
-			"name": "expression.group.ark"
+			"name": "expression.group.arkscript"
 		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.ark",
-				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
-			},
-			{
-				"name": "support.function.list.ark",
-				"match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt) "
-			},
-			{
-				"name": "support.function.io.ark",
-				"match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
-			},
-			{
-				"name": "support.function.time.ark",
-				"match": "\\b(time) "
-			},
-			{
-				"name": "support.function.system.ark",
-				"match": "\\b(sys:exec|sys:sleep) "
-			},
-			{
-				"name": "support.function.string.ark",
-				"match": "\\b(str:format|str:find|str:removeAt) "
-			},
-			{
-				"name": "support.function.math.ark",
-				"match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan) "
-			},
-			{
-				"name": "keyword.operator.ark",
-				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField) "
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.arkscript",
+					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+				}
+			]
+		},
+		"builtins": {
+			"patterns": [
+				{
+					"begin": "[(\\[{]([a-zA-Z_][a-zA-Z0-9_\\?:]+)",
+					"beginCaptures": {
+						"1": { "name": "support.function.arkscript" }
+					}
+				},
+				{
+					"name": "support.function.arkscript",
+					"match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt) "
+				},
+				{
+					"name": "support.function.io.arkscript",
+					"match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
+				},
+				{
+					"name": "support.function.time.arkscript",
+					"match": "\\b(time) "
+				},
+				{
+					"name": "support.function.system.arkscript",
+					"match": "\\b(sys:exec|sys:sleep) "
+				},
+				{
+					"name": "support.function.string.arkscript",
+					"match": "\\b(str:format|str:find|str:removeAt) "
+				},
+				{
+					"name": "support.function.math.arkscript",
+					"match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan) "
+				},
+				{
+					"name": "keyword.operator.arkscript",
+					"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField) "
+				}
+			]
 		},
 		"strings": {
-			"name": "string.quoted.double.ark",
+			"name": "string.quoted.double.arkscript",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.ark",
+					"name": "constant.character.escape.arkscript",
 					"match": "\\\\."
 				}
 			]
@@ -67,19 +78,19 @@
 			"patterns": [
 				{
 					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*",
-					"name": "variable.name.ark"
+					"name": "variable.name.arkscript"
 				},
 				{
 					"match": "(nil)(?=(\\s|\\)|\\]|\\}))",
-					"name": "constant.language.nil.ark"
+					"name": "constant.language.nil.arkscript"
 				},
 				{
 					"match": "(true|false)",
-					"name": "constant.language.boolean.ark"
+					"name": "constant.language.boolean.arkscript"
 				},
 				{
 					"match": "((-|\\+)?\\d+(\\.\\d+)?)",
-					"name": "constant.numeric.ark"
+					"name": "constant.numeric.arkscript"
 				}
 			]
 		},
@@ -87,40 +98,40 @@
 			"begin": "#",
 			"patterns": [
 				{
-					"name": "comment.line.content.ark",
+					"name": "comment.line.content.arkscript",
 					"match": ".*"
 				},
 				{
-					"name": "comment.block.documentation.brief.ark",
+					"name": "comment.block.documentation.brief.arkscript",
 					"match": "@brief .*$"
 				},
 				{
-					"name": "comment.block.documentation.details.ark",
+					"name": "comment.block.documentation.details.arkscript",
 					"match": "@details .*$"
 				},
 				{
-					"name": "comment.block.documentation.meta.ark",
+					"name": "comment.block.documentation.meta.arkscript",
 					"match": "@meta .*$"
 				},
 				{
-					"name": "comment.block.documentation.code.ark",
+					"name": "comment.block.documentation.code.arkscript",
 					"match": "---$"
 				},
 				{
-					"name": "comment.block.documentation.param.ark",
+					"name": "comment.block.documentation.param.arkscript",
 					"match": "@param .*$"
 				},
 				{
-					"name": "comment.block.documentation.author.ark",
+					"name": "comment.block.documentation.author.arkscript",
 					"match": "@author .*$"
 				}
 			],
 			"end": "$",
-			"name": "comment.line.ark"
+			"name": "comment.line.arkscript"
 		},
 		"captures": {
 			"patterns": [{
-				"name": "variable.parameter.ark",
+				"name": "variable.parameter.arkscript",
 				"match": "&[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*"
 			}]
 		}
