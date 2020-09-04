@@ -21,7 +21,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.arkscript",
+					"name": "keyword.arkscript",
 					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
 				}
 			]
