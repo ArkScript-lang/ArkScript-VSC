@@ -20,7 +20,6 @@
 			"patterns": [
 				{ "include": "#expression" },
 				{
-					"name": "entity.name.function.call.arkscript",
 					"begin": "",
 					"patterns": [
 						{
