@@ -98,7 +98,7 @@
 				},
 				{
 					"name": "comment.line.content.arkscript",
-					"match": "[^@]*"
+					"match": "^ (?!(@[a-z]+ .+|---$)).*"
 				}
 			],
 			"end": "$",
