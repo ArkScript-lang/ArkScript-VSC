@@ -32,7 +32,7 @@
     ],
     "grammars": [
       {
-        "language": "ArkScript",
+        "language": "arkscript",
         "scopeName": "source.ark",
         "path": "./syntaxes/arkscript.tmLanguage.json"
       }
