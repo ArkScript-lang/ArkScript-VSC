@@ -17,17 +17,6 @@
 			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
 			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
 			"name": "expression.group.arkscript",
-			"patterns": [{ "include": "#expression" }]
-		},
-		"keywords": {
-			"patterns": [
-				{
-					"name": "keyword.arkscript",
-					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
-				}
-			]
-		},
-		"builtins": {
 			"patterns": [
 				{
 					"name": "entity.name.function.call.arkscript",
@@ -40,6 +29,19 @@
 					],
 					"end": "[ \t\n\r]"
 				},
+				{ "include": "#expression" }
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.arkscript",
+					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+				}
+			]
+		},
+		"builtins": {
+			"patterns": [
 				{
 					"name": "keyword.operator.ark",
 					"match": "(<=|>=|!=|[-+*/<>=@])"
