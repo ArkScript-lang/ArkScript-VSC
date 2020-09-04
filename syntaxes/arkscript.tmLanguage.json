@@ -18,6 +18,7 @@
 			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
 			"name": "expression.group.arkscript",
 			"patterns": [
+				{ "include": "#expression" },
 				{
 					"begin": "[ \t\n\r]*",
 					"patterns": [
@@ -27,8 +28,7 @@
 						}
 					],
 					"end": "([ \t\n\r]+|\\))"
-				},
-				{ "include": "#expression" }
+				}
 			]
 		},
 		"keywords": {
