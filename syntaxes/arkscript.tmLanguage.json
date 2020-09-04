@@ -20,7 +20,7 @@
 			"patterns": [
 				{ "include": "#expression" },
 				{
-					"begin": "",
+					"begin": "[ \t\n\r]",
 					"patterns": [
 						{
 							"name": "entity.name.function.arkscript",
