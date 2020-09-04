@@ -20,14 +20,14 @@
 			"patterns": [
 				{ "include": "#expression" },
 				{
-					"begin": "[ \t\n\r]",
+					"begin": "[ \t\n\r]+",
 					"patterns": [
 						{
 							"name": "entity.name.function.arkscript",
 							"match": " *([a-zA-Z_][a-zA-Z0-9_\\?:']*)"
 						}
 					],
-					"end": "[ \t\n\r]"
+					"end": "([ \t\n\r]+|\\))"
 				}
 			]
 		},
