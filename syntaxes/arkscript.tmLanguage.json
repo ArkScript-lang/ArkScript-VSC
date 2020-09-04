@@ -73,20 +73,16 @@
 			"begin": "#",
 			"patterns": [
 				{
-					"name": "comment.line.content.arkscript",
-					"match": ".*"
-				},
-				{
 					"name": "comment.block.documentation.brief.arkscript",
-					"match": "@brief .*$"
+					"match": "@brief .*"
 				},
 				{
 					"name": "comment.block.documentation.details.arkscript",
-					"match": "@details .*$"
+					"match": "@details .*"
 				},
 				{
 					"name": "comment.block.documentation.meta.arkscript",
-					"match": "@meta .*$"
+					"match": "@meta .*"
 				},
 				{
 					"name": "comment.block.documentation.code.arkscript",
@@ -94,11 +90,15 @@
 				},
 				{
 					"name": "comment.block.documentation.param.arkscript",
-					"match": "@param .*$"
+					"match": "@param .*"
 				},
 				{
 					"name": "comment.block.documentation.author.arkscript",
-					"match": "@author .*$"
+					"match": "@author .*"
+				},
+				{
+					"name": "comment.line.content.arkscript",
+					"match": ".*"
 				}
 			],
 			"end": "$",
