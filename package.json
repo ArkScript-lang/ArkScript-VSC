@@ -2,7 +2,7 @@
   "name": "arkscript",
   "displayName": "ArkScript",
   "description": "ArkScript programming language syntax highlighting extension",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "publisher": "ArkScript-lang",
   "repository": {
     "type": "git",
