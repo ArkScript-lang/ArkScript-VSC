@@ -14,7 +14,10 @@
 		"paren-expression": {
 			"begin": "\\(",
 			"end": "\\)",
-			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
+			"beginCaptures": {
+				"0": { "name": "punctuation.paren.open" },
+				"1": { "name": "entity.name.function.arkscript" }
+			},
 			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
 			"name": "expression.group.arkscript",
 			"patterns": [{ "include": "#expression" }]
@@ -29,13 +32,6 @@
 		},
 		"builtins": {
 			"patterns": [
-				{
-					"begin": "\\(([a-zA-Z_][a-zA-Z0-9_\\?:']*)",
-					"beginCaptures": {
-						"1": { "name": "entity.name.function.arkscript" }
-					},
-					"name": "entity.name.function.afterparen.arkscript"
-				},
 				{
 					"name": "keyword.operator.ark",
 					"match": "(\\+|\\-|\\*|/|<|>|<=|>=|!=|=|@)"
