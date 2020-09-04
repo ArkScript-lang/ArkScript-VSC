@@ -73,28 +73,28 @@
 			"begin": "#",
 			"patterns": [
 				{
-					"name": "comment.block.documentation.brief.arkscript",
-					"match": " *@brief.*"
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *@brief"
 				},
 				{
-					"name": "comment.block.documentation.details.arkscript",
-					"match": " *@details.*"
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *@details"
 				},
 				{
-					"name": "comment.block.documentation.meta.arkscript",
-					"match": " *@meta.*"
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *@meta"
 				},
 				{
-					"name": "comment.block.documentation.code.arkscript",
+					"name": "storage.type.class.arkdoc.arkscript",
 					"match": " *---$"
 				},
 				{
-					"name": "comment.block.documentation.param.arkscript",
-					"match": " *@param.*"
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *@param"
 				},
 				{
-					"name": "comment.block.documentation.author.arkscript",
-					"match": " *@author.*"
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *@author"
 				},
 				{
 					"name": "comment.line.content.arkscript",
