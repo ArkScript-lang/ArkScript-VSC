@@ -7,7 +7,8 @@
 		"expression": {
 			"patterns": [
 				{ "include": "#paren-expression" }, { "include": "#captures" }, { "include": "#keywords" },
-				{ "include": "#strings" }, { "include": "#comments" }, { "include": "#constants" }
+				{ "include": "#strings" }, { "include": "#comments" }, { "include": "#constants" },
+				{ "include": "#builtins" }
 			]
 		},
 		"paren-expression": {
