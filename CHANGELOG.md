@@ -2,10 +2,11 @@
 
 All notable changes to the "ark" extension will be documented in this file.
 
-## 0.0.5
+## 0.2.0
 ### Added
 - coloration for documentation blocks
 - more keyword coloration
+- logo
 
 ### Changed
 - The repository is now hosted on https://github.com/ArkScript-lang/ArkScript-VSC

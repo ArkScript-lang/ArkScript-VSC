@@ -2,6 +2,7 @@
   "name": "arkscript",
   "displayName": "ArkScript",
   "description": "ArkScript programming language syntax highlighting extension",
+  "icon": "images/logo.png",
   "version": "0.2.0",
   "publisher": "ArkScript-lang",
   "repository": {
@@ -31,7 +32,7 @@
     ],
     "grammars": [
       {
-        "language": "arkscript",
+        "language": "ArkScript",
         "scopeName": "source.ark",
         "path": "./syntaxes/arkscript.tmLanguage.json"
       }
