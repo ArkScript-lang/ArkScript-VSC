@@ -15,7 +15,8 @@
 			"end": "\\)",
 			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
 			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
-			"name": "expression.group.arkscript"
+			"name": "expression.group.arkscript",
+			"patterns": [{ "include": "#expression" }]
 		},
 		"keywords": {
 			"patterns": [
