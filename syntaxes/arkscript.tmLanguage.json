@@ -30,38 +30,14 @@
 		"builtins": {
 			"patterns": [
 				{
-					"begin": "[(\\[{]([a-zA-Z_][a-zA-Z0-9_\\?:]+)",
+					"begin": "[(\\[{]([a-zA-Z_][a-zA-Z0-9_\\?:']*)",
 					"beginCaptures": {
 						"1": { "name": "entity.name.function.arkscript" }
 					}
 				},
 				{
-					"name": "entity.name.function.arkscript",
-					"match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt) "
-				},
-				{
-					"name": "entity.name.function.io.arkscript",
-					"match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
-				},
-				{
-					"name": "entity.name.function.time.arkscript",
-					"match": "\\b(time) "
-				},
-				{
-					"name": "entity.name.function.system.arkscript",
-					"match": "\\b(sys:exec|sys:sleep) "
-				},
-				{
-					"name": "entity.name.function.string.arkscript",
-					"match": "\\b(str:format|str:find|str:removeAt) "
-				},
-				{
-					"name": "entity.name.function.math.arkscript",
-					"match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan) "
-				},
-				{
-					"name": "keyword.operator.arkscript",
-					"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField) "
+					"name": "keyword.operator.ark",
+					"match": "(\\+|\\-|\\*|/|<|>|<=|>=|!=|=|@)"
 				}
 			]
 		},
@@ -79,7 +55,7 @@
 		"constants": {
 			"patterns": [
 				{
-					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*",
+					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?':]*",
 					"name": "variable.name.arkscript"
 				},
 				{
