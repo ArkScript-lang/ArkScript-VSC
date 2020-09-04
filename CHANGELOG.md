@@ -4,12 +4,12 @@ All notable changes to the "ark" extension will be documented in this file.
 
 ## 0.0.5
 ### Added
+- coloration for documentation blocks
+- more keyword coloration
 
 ### Changed
 - The repository is now hosted on https://github.com/ArkScript-lang/ArkScript-VSC
 - Comments should start with `#` (in the old version it used to start with `'`)
-
-### Removed
 
 ## 0.0.4
 ### Changed

@@ -5,7 +5,11 @@
 	"patterns": [{"include": "#expression"}],
 	"repository": {
 		"expression": {
-			"patterns": [{ "include": "#paren-expression" }, { "include": "#captures" }, { "include": "#keywords" }, { "include": "#strings" }, { "include": "#numbers" }, { "include": "#comments" }, { "include": "#constants" }]
+			"patterns": [
+				{ "include": "#paren-expression" }, { "include": "#captures" }, { "include": "#keywords" },
+				{ "include": "#strings" }, { "include": "#numbers" }, { "include": "#comments" },
+				{ "include": "#constants" }
+			]
 		},
 		"paren-expression": {
 			"begin": "\\(",
@@ -20,12 +24,32 @@
 				"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
 			},
 			{
-				"name": "support.function.ark",
-				"match": "\\b(append|concat|list|print|input|writeFile|readFile|fileExists\\?) "
+				"name": "support.function.list.ark",
+				"match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt) "
+			},
+			{
+				"name": "support.function.io.ark",
+				"match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
+			},
+			{
+				"name": "support.function.time.ark",
+				"match": "\\b(time) "
+			},
+			{
+				"name": "support.function.system.ark",
+				"match": "\\b(sys:exec|sys:sleep) "
+			},
+			{
+				"name": "support.function.string.ark",
+				"match": "\\b(str:format|str:find|str:removeAt) "
+			},
+			{
+				"name": "support.function.math.ark",
+				"match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan) "
 			},
 			{
 				"name": "keyword.operator.ark",
-				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstof|tailof|headof|nil\\?|assert|toNumber|toString|and|or|mod|type|hasfield) "
+				"match": "\\b(\\+|\\-|\\*|/|<=|>=|!=|<|>|@=|@|=|\\^|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField) "
 			}]
 		},
 		"strings": {
@@ -65,6 +89,30 @@
 				{
 					"name": "comment.line.content.ark",
 					"match": ".*"
+				},
+				{
+					"name": "comment.block.documentation.brief.ark",
+					"match": "@brief .*$"
+				},
+				{
+					"name": "comment.block.documentation.details.ark",
+					"match": "@details .*$"
+				},
+				{
+					"name": "comment.block.documentation.meta.ark",
+					"match": "@meta .*$"
+				},
+				{
+					"name": "comment.block.documentation.code.ark",
+					"match": "---$"
+				},
+				{
+					"name": "comment.block.documentation.param.ark",
+					"match": "@param .*$"
+				},
+				{
+					"name": "comment.block.documentation.author.ark",
+					"match": "@author .*$"
 				}
 			],
 			"end": "$",
