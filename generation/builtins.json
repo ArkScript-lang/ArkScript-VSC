@@ -1,0 +1,12 @@
+{
+    "functions": {
+        "list": ["append", "concat", "list", "list:reverse", "list:find", "list:removeAt", "list:slice", "list:sort", "list:fill", "list:setAt"],
+        "io": ["print", "puts", "input", "io:writeFile", "io:readFile", "io:fileExists\\?", "io:listFiles", "io:dir\\?", "io:makeDir", "io:removeFiles"],
+        "time": ["time"],
+        "system": ["sys:exec", "sys:sleep"],
+        "string": ["str:format", "str:find", "str:removeAt"],
+        "math": ["math:exp", "math:ln", "math:ceil", "math:floor", "math:round", "math:NaN\\?", "math:Inf\\?", "math:pi", "math:e", 
+            "math:tau", "math:Inf", "math:NaN", "math:cos", "math:sin", "math:tan", "math:arccos", "math:arcsin", "math:arctan"]
+    },
+    "arkdoc": ["brief", "details", "meta", "param", "author"]
+}
