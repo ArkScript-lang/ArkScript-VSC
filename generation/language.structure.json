@@ -1,0 +1,93 @@
+{
+	"scopeName": "source.ark",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "arkscript",
+	"patterns": [{"include": "#expression"}],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{ "include": "#paren-expression" }, { "include": "#builtins" }, { "include": "#captures" },
+				{ "include": "#keywords" }, { "include": "#strings" }, { "include": "#comments" },
+				{ "include": "#constants" }
+			]
+		},
+		"paren-expression": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
+			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
+			"name": "expression.group.arkscript",
+			"patterns": [
+				{ "include": "#expression" }
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.arkscript",
+					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+				}
+			]
+		},
+		"builtins": {
+			"patterns": [
+				{
+					"name": "keyword.operator.ark",
+					"match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.arkscript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.arkscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "variable.name.arkscript",
+					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?':]*"
+				},
+				{
+					"name": "constant.language.nil.arkscript",
+					"match": "((nil)(?=(\\s|\\)|\\]|\\}))|nil)"
+				},
+				{
+					"name": "constant.language.boolean.arkscript",
+					"match": "(true|false)"
+				},
+				{
+					"name": "constant.numeric.arkscript",
+					"match": "((-|\\+)?\\d+(\\.\\d+)?)"
+				}
+			]
+		},
+		"comments": {
+			"begin": "#",
+			"patterns": [
+				{
+					"name": "storage.type.class.arkdoc.arkscript",
+					"match": " *---$"
+				},
+				{
+					"name": "comment.line.content.arkscript",
+					"match": " *(?!@[a-z]+|---$).*"
+				}
+			],
+			"end": "$",
+			"name": "comment.line.arkscript"
+		},
+		"captures": {
+			"patterns": [{
+				"name": "variable.parameter.arkscript",
+				"match": "&[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*"
+			}]
+		}
+	}
+}

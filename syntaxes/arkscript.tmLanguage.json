@@ -1,137 +1,179 @@
 {
-	"scopeName": "source.ark",
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "arkscript",
-	"patterns": [{"include": "#expression"}],
-	"repository": {
-		"expression": {
-			"patterns": [
-				{ "include": "#paren-expression" }, { "include": "#builtins" }, { "include": "#captures" },
-				{ "include": "#keywords" }, { "include": "#strings" }, { "include": "#comments" },
-				{ "include": "#constants" }
-			]
-		},
-		"paren-expression": {
-			"begin": "\\(",
-			"end": "\\)",
-			"beginCaptures": { "0": { "name": "punctuation.paren.open" } },
-			"endCaptures": { "0": { "name": "punctuation.paren.close" } },
-			"name": "expression.group.arkscript",
-			"patterns": [
-				{ "include": "#expression" }
-			]
-		},
-		"keywords": {
-			"patterns": [
-				{
-					"name": "keyword.arkscript",
-					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
-				}
-			]
-		},
-		"builtins": {
-			"patterns": [
-				{
-					"name": "keyword.operator.ark",
-					"match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
-				},
-				{
-					"name": "entity.name.function.arkscript",
-					"match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt) "
-				},
-				{
-					"name": "entity.name.function.io.arkscript",
-					"match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
-				},
-				{
-					"name": "entity.name.function.time.arkscript",
-					"match": "\\b(time) "
-				},
-				{
-					"name": "entity.name.function.system.arkscript",
-					"match": "\\b(sys:exec|sys:sleep) "
-				},
-				{
-					"name": "entity.name.function.string.arkscript",
-					"match": "\\b(str:format|str:find|str:removeAt) "
-				},
-				{
-					"name": "entity.name.function.math.arkscript",
-					"match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan) "
-				}
-			]
-		},
-		"strings": {
-			"name": "string.quoted.double.arkscript",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.arkscript",
-					"match": "\\\\."
-				}
-			]
-		},
-		"constants": {
-			"patterns": [
-				{
-					"match": "[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?':]*",
-					"name": "variable.name.arkscript"
-				},
-				{
-					"match": "(nil)(?=(\\s|\\)|\\]|\\}))",
-					"name": "constant.language.nil.arkscript"
-				},
-				{
-					"match": "(true|false)",
-					"name": "constant.language.boolean.arkscript"
-				},
-				{
-					"match": "((-|\\+)?\\d+(\\.\\d+)?)",
-					"name": "constant.numeric.arkscript"
-				}
-			]
-		},
-		"comments": {
-			"begin": "#",
-			"patterns": [
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *@brief"
-				},
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *@details"
-				},
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *@meta"
-				},
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *---$"
-				},
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *@param"
-				},
-				{
-					"name": "storage.type.class.arkdoc.arkscript",
-					"match": " *@author"
-				},
-				{
-					"name": "comment.line.content.arkscript",
-					"match": " *(?!@[a-z]+|---$).*"
-				}
-			],
-			"end": "$",
-			"name": "comment.line.arkscript"
-		},
-		"captures": {
-			"patterns": [{
-				"name": "variable.parameter.arkscript",
-				"match": "&[a-zA-Z_\u0080-\uDB7F][a-zA-Z0-9_\u0080-\uDB7F\\-?']*"
-			}]
-		}
-	}
+    "scopeName": "source.ark",
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "arkscript",
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {
+                    "include": "#paren-expression"
+                },
+                {
+                    "include": "#builtins"
+                },
+                {
+                    "include": "#captures"
+                },
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#strings"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#constants"
+                }
+            ]
+        },
+        "paren-expression": {
+            "begin": "\\(",
+            "end": "\\)",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.paren.open"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.paren.close"
+                }
+            },
+            "name": "expression.group.arkscript",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.arkscript",
+                    "match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+                }
+            ]
+        },
+        "builtins": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.ark",
+                    "match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
+                },
+                {
+                    "name": "entity.name.function.list.arkscript",
+                    "match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt|list:forEach|list:product|list:sum|list:drop|list:dropWhile|list:filter|list:map|list:reduce|list:flatten|list:flatMap|list:take|list:unzip|list:zip|list:foldLeft) "
+                },
+                {
+                    "name": "entity.name.function.io.arkscript",
+                    "match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
+                },
+                {
+                    "name": "entity.name.function.time.arkscript",
+                    "match": "\\b(time) "
+                },
+                {
+                    "name": "entity.name.function.system.arkscript",
+                    "match": "\\b(sys:exec|sys:sleep) "
+                },
+                {
+                    "name": "entity.name.function.string.arkscript",
+                    "match": "\\b(str:format|str:find|str:removeAt|str:toLower|str:toUpper|str:reverse|str:slice|str:split|str:replace|str:join) "
+                },
+                {
+                    "name": "entity.name.function.math.arkscript",
+                    "match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan|math:abs|math:even|math:odd|math:min|math:max|math:pow|math:sqrt|math:fibo|math:divs) "
+                },
+                {
+                    "name": "entity.name.function.events.arkscript",
+                    "match": "\\b(events:manager:make) "
+                },
+                {
+                    "name": "entity.name.function.exceptions.arkscript",
+                    "match": "\\b(throw|return|try) "
+                },
+                {
+                    "name": "entity.name.function.functional.arkscript",
+                    "match": "\\b(compose|left|right|flip) "
+                },
+                {
+                    "name": "entity.name.function.os.arkscript",
+                    "match": "\\b(os:home_dir) "
+                },
+                {
+                    "name": "entity.name.function.range.arkscript",
+                    "match": "\\b(range|range:forEach|range:filter|range:map|range:reduce) "
+                },
+                {
+                    "name": "entity.name.function.switch.arkscript",
+                    "match": "\\b(switch) "
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.arkscript",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.arkscript",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "variable.name.arkscript",
+                    "match": "[a-zA-Z_\u0080-\udb7f][a-zA-Z0-9_\u0080-\udb7f\\-?':]*"
+                },
+                {
+                    "name": "constant.language.nil.arkscript",
+                    "match": "((nil)(?=(\\s|\\)|\\]|\\}))|nil)"
+                },
+                {
+                    "name": "constant.language.boolean.arkscript",
+                    "match": "(true|false)"
+                },
+                {
+                    "name": "constant.numeric.arkscript",
+                    "match": "((-|\\+)?\\d+(\\.\\d+)?)"
+                }
+            ]
+        },
+        "comments": {
+            "begin": "#",
+            "patterns": [
+                {
+                    "name": "storage.type.class.arkdoc.arkscript",
+                    "match": " *---$"
+                },
+                {
+                    "name": "comment.line.content.arkscript",
+                    "match": " *(?!@[a-z]+|---$).*"
+                },
+                {
+                    "name": "storage.type.class.arkdoc.arkscript",
+                    "match": " *(@brief|@details|@meta|@param|@author)"
+                }
+            ],
+            "end": "$",
+            "name": "comment.line.arkscript"
+        },
+        "captures": {
+            "patterns": [
+                {
+                    "name": "variable.parameter.arkscript",
+                    "match": "&[a-zA-Z_\u0080-\udb7f][a-zA-Z0-9_\u0080-\udb7f\\-?']*"
+                }
+            ]
+        }
+    }
 }
