@@ -153,15 +153,15 @@
             "patterns": [
                 {
                     "name": "storage.type.class.arkdoc.arkscript",
+                    "match": " *(@brief|@details|@meta|@param|@author)"
+                },
+                {
+                    "name": "storage.type.class.arkdoc.arkscript",
                     "match": " *---$"
                 },
                 {
                     "name": "comment.line.content.arkscript",
                     "match": " *(?!@[a-z]+|---$).*"
-                },
-                {
-                    "name": "storage.type.class.arkdoc.arkscript",
-                    "match": " *(@brief|@details|@meta|@param|@author)"
                 }
             ],
             "end": "$",

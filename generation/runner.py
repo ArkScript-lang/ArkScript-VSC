@@ -55,7 +55,7 @@ def generate_from_stems(out_path: str, std_keywords: dict):
         })
 
     # adding the arkdoc @params to the content
-    content['repository']['comments']['patterns'].append({
+    content['repository']['comments']['patterns'].insert(0, {
             "name": "storage.type.class.arkdoc.arkscript",
             "match": f" *({'|'.join([f'@{e}' for e in builtins['arkdoc']])})"
 	})
