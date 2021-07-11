@@ -69,7 +69,7 @@
                 },
                 {
                     "name": "entity.name.function.list.arkscript",
-                    "match": "\\b(append|concat|list|list:reverse|list:find|list:removeAt|list:slice|list:sort|list:fill|list:setAt|list:forEach|list:product|list:sum|list:drop|list:dropWhile|list:filter|list:map|list:reduce|list:flatten|list:flatMap|list:take|list:unzip|list:zip|list:foldLeft) "
+                    "match": "\\b(append|append!|concat|concat!|pop|pop!|list|list:reverse|list:find|list:slice|list:sort|list:fill|list:setAt|list:forEach|list:product|list:sum|list:drop|list:dropWhile|list:filter|list:map|list:reduce|list:flatten|list:flatMap|list:take|list:unzip|list:zip|list:foldLeft|list:forAll|list:any) "
                 },
                 {
                     "name": "entity.name.function.io.arkscript",
@@ -89,7 +89,7 @@
                 },
                 {
                     "name": "entity.name.function.math.arkscript",
-                    "match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan|math:abs|math:even|math:odd|math:min|math:max|math:pow|math:sqrt|math:fibo|math:divs) "
+                    "match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan|math:abs|math:even|math:odd|math:min|math:max|math:pow|math:sqrt|math:fibo|math:divs|math:log|math:floordiv) "
                 },
                 {
                     "name": "entity.name.function.events.arkscript",

@@ -1,6 +1,6 @@
 {
     "functions": {
-        "list": ["append", "concat", "list", "list:reverse", "list:find", "list:removeAt", "list:slice", "list:sort", "list:fill", "list:setAt"],
+        "list": ["append", "append!", "concat", "concat!", "pop", "pop!", "list", "list:reverse", "list:find", "list:slice", "list:sort", "list:fill", "list:setAt"],
         "io": ["print", "puts", "input", "io:writeFile", "io:readFile", "io:fileExists\\?", "io:listFiles", "io:dir\\?", "io:makeDir", "io:removeFiles"],
         "time": ["time"],
         "system": ["sys:exec", "sys:sleep"],

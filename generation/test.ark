@@ -10,8 +10,8 @@ len empty? firstOf tailOf headOf nil? assert toNumber toString and or mod type h
 12345 # constant numeric
 true false nil # constants language
 
-append concat list # builtins
-list:reverse list:find list:removeAt list:slice list:sort list:fill list:setAt # list builtins
+append append! concat concat! pop pop! list # builtins
+list:reverse list:find list:slice list:sort list:fill list:setAt # list builtins
 print puts input io:writeFile io:readFile io:fileExists? io:listFiles io:dir? io:makeDir io:removeFiles # io builtins
 time # time builtins
 sys:exec sys:sleep # sys builtins
