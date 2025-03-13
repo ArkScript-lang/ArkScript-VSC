@@ -2,6 +2,10 @@
 
 All notable changes to the "ark" extension will be documented in this file.
 
+## 0.9.0
+### Added
+- 
+
 ## 0.8.0
 ### Added
 - support for the std functions and closures

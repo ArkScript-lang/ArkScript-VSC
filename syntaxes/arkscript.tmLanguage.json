@@ -57,7 +57,7 @@
             "patterns": [
                 {
                     "name": "keyword.arkscript",
-                    "match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+                    "match": "\\b(if|while|begin|fun|let|import|set|mut|del) "
                 }
             ]
         },
@@ -65,15 +65,15 @@
             "patterns": [
                 {
                     "name": "keyword.operator.ark",
-                    "match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
+                    "match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|head|tail|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
                 },
                 {
                     "name": "entity.name.function.list.arkscript",
-                    "match": "\\b(append|append!|concat|concat!|pop|pop!|list|list:reverse|list:find|list:slice|list:sort|list:fill|list:setAt|list:forEach|list:product|list:sum|list:drop|list:dropWhile|list:filter|list:map|list:reduce|list:flatten|list:flatMap|list:take|list:unzip|list:zip|list:foldLeft|list:forAll|list:any) "
+                    "match": "\\b(append|append!|concat|concat!|pop|pop!|list|list:reverse|list:find|list:slice|list:sort|list:fill|list:setAt|@=|@@=|list:forEach|list:product|list:sum|list:drop|list:dropWhile|list:filter|list:map|list:reduce|list:flatten|list:flatMap|list:take|list:takeWhile|list:unzip|list:zip|list:zipWithIndex|list:foldLeft|list:forAll|list:any|list:countIf|list:iterate|list:iota|list:chunkBy|forEach|product|sum|drop|dropWhile|filter|map|reduce|flatten|flatMap|take|takeWhile|unzip|zip|zipWithIndex|foldLeft|forAll|any|countIf|iterate|iota|chunkBy) "
                 },
                 {
                     "name": "entity.name.function.io.arkscript",
-                    "match": "\\b(print|puts|input|io:writeFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
+                    "match": "\\b(print|puts|input|io:writeFile|io:appendToFile|io:readFile|io:fileExists\\?|io:listFiles|io:dir\\?|io:makeDir|io:removeFiles) "
                 },
                 {
                     "name": "entity.name.function.time.arkscript",
@@ -81,39 +81,47 @@
                 },
                 {
                     "name": "entity.name.function.system.arkscript",
-                    "match": "\\b(sys:exec|sys:sleep) "
+                    "match": "\\b(sys:exec|sys:sleep|sys:exit) "
                 },
                 {
                     "name": "entity.name.function.string.arkscript",
-                    "match": "\\b(str:format|str:find|str:removeAt|str:toLower|str:toUpper|str:reverse|str:slice|str:split|str:replace|str:join) "
+                    "match": "\\b(string:format|string:find|string:removeAt|string:setAt|string:chr|string:ord|string:toLower|string:toUpper|string:reverse|string:slice|string:split|string:replace|string:join|toLower|toUpper|reverse|slice|split|replace|join) "
                 },
                 {
                     "name": "entity.name.function.math.arkscript",
-                    "match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan|math:abs|math:even|math:odd|math:min|math:max|math:pow|math:sqrt|math:fibo|math:divs|math:log|math:floordiv) "
+                    "match": "\\b(math:exp|math:ln|math:ceil|math:floor|math:round|math:NaN\\?|math:Inf\\?|math:pi|math:e|math:tau|math:Inf|math:NaN|math:cos|math:sin|math:tan|math:arccos|math:arcsin|math:arctan|math:abs|math:even|math:odd|math:min|math:max|math:pow|math:sqrt|math:fibo|math:divs|math:log|math:log2|math:log10|math:floordiv|math:complex|math:complex-add|math:complex-sub|math:complex-mul|math:complex-conjugate|math:complex-module|math:complex-div|abs|even|odd|min|max|pow|sqrt|fibo|divs|log|floordiv|complex) "
                 },
                 {
-                    "name": "entity.name.function.events.arkscript",
-                    "match": "\\b(events:manager:make) "
+                    "name": "entity.name.function.other.arkscript",
+                    "match": "\\b(switch|lazy:eval|exceptions:throw|exceptions:return|exceptions:try|range:range|range:forEach|range:filter|range:map|range:reduce|os:home_dir|test:case|test:expect|test:eq|test:neq|test:suite|functional:compose|functional:left|functional:right|functional:flip|events:manager:make|events:_check_valid|events:on|events:emitWith|events:emit|events:removeListenersOfType|async|await|random) "
+                },
+                {
+                    "name": "entity.name.function.lazy.arkscript",
+                    "match": "\\b(eval) "
                 },
                 {
                     "name": "entity.name.function.exceptions.arkscript",
                     "match": "\\b(throw|return|try) "
                 },
                 {
+                    "name": "entity.name.function.range.arkscript",
+                    "match": "\\b(range|forEach|filter|map|reduce) "
+                },
+                {
+                    "name": "entity.name.function.os.arkscript",
+                    "match": "\\b(home_dir) "
+                },
+                {
+                    "name": "entity.name.function.testing.arkscript",
+                    "match": "\\b(_make_suite|_runner|_add_case|_report_error|_report_success) "
+                },
+                {
                     "name": "entity.name.function.functional.arkscript",
                     "match": "\\b(compose|left|right|flip) "
                 },
                 {
-                    "name": "entity.name.function.os.arkscript",
-                    "match": "\\b(os:home_dir) "
-                },
-                {
-                    "name": "entity.name.function.range.arkscript",
-                    "match": "\\b(range|range:forEach|range:filter|range:map|range:reduce) "
-                },
-                {
-                    "name": "entity.name.function.switch.arkscript",
-                    "match": "\\b(switch) "
+                    "name": "entity.name.function.events.arkscript",
+                    "match": "\\b(manager:make) "
                 }
             ]
         },

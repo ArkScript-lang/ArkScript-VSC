@@ -3,9 +3,9 @@
 # * Dark+ (doesnt highlight operators)
 # * Tokyo Night (doesnt highlight language constants)
 
-if while begin fun let import set mut del quote # keyword
+if while begin fun let import set mut del # keyword
 
-len empty? firstOf tailOf headOf nil? assert toNumber toString and or mod type hasField # operator
+len empty? head tail nil? assert toNumber toString and or mod type hasField # operator
 "quoted" # string quoted double
 12345 # constant numeric
 true false nil # constants language
@@ -15,7 +15,7 @@ list:reverse list:find list:slice list:sort list:fill list:setAt # list builtins
 print puts input io:writeFile io:readFile io:fileExists? io:listFiles io:dir? io:makeDir io:removeFiles # io builtins
 time # time builtins
 sys:exec sys:sleep # sys builtins
-str:format str:find str:removeAt # str builtins
+string:format string:find string:removeAt # str builtins
 math:exp math:ln math:ceil math:floor math:round math:NaN? math:Inf? math:pi math:e math:tau math:Inf math:NaN math:cos math:sin math:tan math:arccos math:arcsin math:arctan # math builtins
 
 throw return try # Exception std
@@ -24,7 +24,7 @@ list:filter list:map list:reduce list:flatten list:flatMap list:take list:unzip 
 math:abs math:even math:odd math:min math:max math:pow math:sqrt math:fibo math:divs # Math std
 os:home_dir # os std
 range range:forEach range:filter range:map range:reduce # Range std
-str:toLower str:toUpper str:reverse str:slice str:split str:replace str:join # String std
+string:toLower string:toUpper string:reverse string:slice string:split string:replace string:join # String std
 switch # Switch std
 
 # @brief

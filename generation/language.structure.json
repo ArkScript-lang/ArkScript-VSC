@@ -25,7 +25,7 @@
 			"patterns": [
 				{
 					"name": "keyword.arkscript",
-					"match": "\\b(if|while|begin|fun|let|import|set|mut|del|quote) "
+					"match": "\\b(if|while|begin|fun|let|import|set|mut|del) "
 				}
 			]
 		},
@@ -33,7 +33,7 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.ark",
-					"match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|firstOf|tailOf|headOf|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
+					"match": "(<=|>=|!=|[-+*/<>=@]|len|empty\\?|head|tail|nil\\?|assert|toNumber|toString|and|or|mod|type|hasField)"
 				}
 			]
 		},

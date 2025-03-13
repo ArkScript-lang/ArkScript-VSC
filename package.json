@@ -3,7 +3,7 @@
   "displayName": "ArkScript",
   "description": "ArkScript programming language syntax highlighting extension",
   "icon": "images/logo.png",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "publisher": "ArkScript-lang",
   "repository": {
     "type": "git",
